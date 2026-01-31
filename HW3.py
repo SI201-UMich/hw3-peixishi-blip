@@ -157,7 +157,7 @@ def main():
     box = CouponDispenser(coupon_cards)
     box.distribute_session()
     box.tally_distribution()
-    
+
 # -----------------------
 # Tests (about 3–4 per function)
 # -----------------------
@@ -434,5 +434,5 @@ def test():
 
 
 if __name__ == "__main__":
-    test()
+    main()
 
