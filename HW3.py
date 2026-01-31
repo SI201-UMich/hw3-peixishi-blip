@@ -89,6 +89,7 @@ class CouponDispenser:
         """
         # TODO: Implement per instructions 
         round_number = 1
+
         while True:
             prompt = (
                 f"Round {round_number} - Enter a name (or a comma-separated list), "
@@ -113,7 +114,7 @@ class CouponDispenser:
                         continue
                     result = self.issue_coupon(name)
                     print(result)
-                    
+
             round_number += 1
 
 
@@ -133,7 +134,16 @@ class CouponDispenser:
             None
         """
         # TODO: Implement per instructions
-        pass
+        if len(self.issued_indices) == 0:
+            print("Empty")
+            return
+
+        for i in range(len(self.coupon_cards)):
+            count = 0
+            for issued in self.issued_indices:
+                if issued == i:
+                    count += 1
+            print(f"{self.coupon_cards[i]} distribution count: {count}.")
 
 
 def main():
