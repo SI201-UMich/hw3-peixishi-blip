@@ -66,6 +66,11 @@ class CouponDispenser:
             coupon_idx = self.issued_indices[idx]
             coupon = self.coupon_cards[coupon_idx]
             return f"That name already has a coupon: {coupon}"
+        
+        rand_index = random.randrange(len(self.coupon_cards))
+        self.customer_roster.append(name)
+        self.issued_indices.append(rand_index)
+        return self.coupon_cards[rand_index]
 
     def distribute_session(self):
         """
